@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 //NEW SCHEMA
-export const PlayerSchema = new Schema[{
+export const PlayerSchema = new Schema({
     firstName: {
         type: String,
         required: true
@@ -68,4 +68,4 @@ export const PlayerSchema = new Schema[{
         default: Date.now
     }
 
-}];
+});
