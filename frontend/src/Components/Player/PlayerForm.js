@@ -2,14 +2,14 @@ import React from 'react';
 import axios from 'axios';
 
 class PlayerForm extends React.Component {
-    submitPlayer(ever) {
-        Event.preventDefault();
+    submitPlayer(event) {
+        event.preventDefault();
 
         axios.post('http://localhost:4000/players', {
-            firstName: this.any.firstName.value,
-            lastName: this.any.lastName.value,
-            phone: this.any.phone.value,
-            email: this.any.email.value
+            firstName: this.refs.firstName.value,
+            lastName: this.refs.lastName.value,
+            phone: this.refs.phone.value,
+            email: this.refs.email.value
         })
             .then((response) => {
                 console.log(response);
@@ -22,7 +22,7 @@ class PlayerForm extends React.Component {
     render() {
         return (
             <div className="row">
-                <h1 className='center'>Add New Player</h1>
+                <h2 className='center'>Add New Player</h2>
                 <form className="col s12" onSubmit={this.submitPlayer.bind(this)}>
                     <div className="row">
                         <div className="input-field col s6">
